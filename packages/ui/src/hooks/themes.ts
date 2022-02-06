@@ -32,7 +32,8 @@ export const makeCssVariables = (variables: CssVariables): string =>
     return acc
   }, '')
 
-export const makeCssColorsVariables = (colors: ThemeColors): string => `:root{${makeCssColorsVariables(colors)}}`
+export const makeCssColorsVariables = (colors: ThemeColors): string =>
+  `:root{${makeCssColorsVariables(colors)}}`
 
 export const useInjectCss = (css: string) => {
   const style = useRef<HTMLStyleElement>(document.createElement('style'))

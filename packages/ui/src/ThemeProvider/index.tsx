@@ -1,22 +1,10 @@
 import type { FC } from 'react'
-import type { Themes } from '../hooks/useThemes'
+import type { Themes } from '../hooks/themes'
 
-import { useState } from 'react'
-
-import { useCssVariables, ThemesTypes } from '../hooks/useThemes'
+import React from 'react'
 
 type Props = {
   themes: Themes
 }
 
-export const ThemeProvider: FC<Props> = ({ themes }) => {
-  const [currentTheme, setCurrentTheme] = useState(ThemesTypes.light)
-
-  const cssVariables = useCssVariables(themes, currentTheme)
-
-  console.log(cssVariables)
-  return (
-    <>
-    </>
-  )
-}
+export const ThemeProvider: FC<Props> = ({}) => <></>
