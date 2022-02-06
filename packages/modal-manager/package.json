@@ -1,0 +1,17 @@
+{
+  "name": "@dmikhaylishin/modal-manager",
+  "version": "1.0.0",
+  "author": "Dmitry <maildubious@gmail.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "scripts": {
+    "precommit": "lint-staged",
+    "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "lint-staged": {
+    "*.(js|jsx|ts|tsx)": [
+      "yarn lint:js"
+    ]
+  }
+}

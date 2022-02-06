@@ -1,0 +1,31 @@
+{
+  "name": "dmikhaylishin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "dist/index.js",
+  "types": "types/index.js",
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "serve": "lerna run start:dev --parallel",
+    "build": "lerna run build",
+    "lint:css": "lerna run lint:css",
+    "lint:js": "lerna run lint:js",
+    "precommit": "lerna run precommit --concurrency 1 --stream"
+  },
+  "workspaces": [
+    "packages/**",
+    "apps/*"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^7.0.4",
+    "lerna": "^4.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn precommit"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "name": "@dmikhaylishin/ui",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "Dmitry <maildubious@gmail.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "dist/lib/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "precommit": "lint-staged",
+    "build": "rollup --config",
+    "start": "rollup --watch --config",
+    "lint:js": "eslint --ext .js,.jsx,.ts,.tsx ./src"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@dmikhaylishin/eslint-config": "^1.0.0",
+    "@dmikhaylishin/prettier-config": "^1.0.0",
+    "@rollup/plugin-alias": "^3.1.8",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-image": "^2.1.1",
+    "@rollup/plugin-node-resolve": "^13.1.1",
+    "@svgr/rollup": "^6.1.2",
+    "@types/bluebird": "^3.5.36",
+    "@types/node": "^17.0.2",
+    "@types/react": "^17.0.37",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
+    "eslint": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "lint-staged": "^12.3.3",
+    "postcss": "^8.4.5",
+    "prettier": "^2.5.1",
+    "rollup": "^2.61.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-styles": "^3.14.1",
+    "rollup-plugin-typescript2": "^0.31.1",
+    "ts-toolbelt": "^9.6.0",
+    "typescript": "^4.5.4",
+    "typescript-plugin-css-modules": "^3.4.0"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2"
+  },
+  "lint-staged": {
+    "*.(js|jsx|ts|tsx)": [
+      "yarn lint:js"
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "name": "@dmikhaylishin/app",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "Dmitry <maildubious@gmail.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "lib/app.js",
+  "scripts": {
+    "precommit": "lint-staged",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^16.11.22",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "5.0.0",
+    "typescript": "^4.5.5",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@dmikhaylishin/eslint-config": "^1.0.0",
+    "@dmikhaylishin/prettier-config": "^1.0.0",
+    "lint-staged": "^12.3.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "lint-staged": {
+    "*.(js|jsx|ts|tsx)": [
+      "yarn lint:js"
+    ]
+  }
+}

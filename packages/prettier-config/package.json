@@ -1,0 +1,28 @@
+{
+  "name": "@dmikhaylishin/prettier-config",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "Dmitry <Dmitriy.Mikhaylishin@noveogroup.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "precommit": "lint-staged",
+    "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "dependencies": {
+    "@dmikhaylishin/eslint-config": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.8.0",
+    "lint-staged": "^12.3.3"
+  },
+  "peerDependencies": {
+    "prettier": "^2.5.1"
+  },
+  "lint-staged": {
+    "*.(js|jsx|ts|tsx)": [
+      "yarn lint:js"
+    ]
+  }
+}
