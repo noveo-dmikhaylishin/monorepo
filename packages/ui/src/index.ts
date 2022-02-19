@@ -1,7 +1,5 @@
-type A = {
-  param: number[]
-}
+export { Layout } from './Layout'
+export { Paper } from './Paper'
 
-export const test = (): A => ({
-  param: [],
-})
+export * from './style/css'
+export * from './theme'

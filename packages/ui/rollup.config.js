@@ -4,11 +4,12 @@ import typescript from 'rollup-plugin-typescript2'
 import commonjs from '@rollup/plugin-commonjs'
 import image from '@rollup/plugin-image'
 import svgr from '@svgr/rollup'
+import postcss from 'rollup-plugin-postcss'
 
 import packageJson from './package.json'
 
 export default {
-  input: './src/index.tsx',
+  input: './src/index.ts',
   output: [
     {
       file: packageJson.main,
@@ -25,6 +26,12 @@ export default {
     peerDepsExternal(),
     resolve(),
     commonjs(),
+    postcss({
+      sourceMap: true,
+      minimize: true,
+      extract: false,
+      modules: false,
+    }),
     typescript({
       tsconfig: './tsconfig.json',
       useTsconfigDeclarationDir: true,
