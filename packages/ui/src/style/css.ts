@@ -13,6 +13,7 @@ export const makeClassesForCssVariables = (variables: CssVariables): string =>
   Object.keys(variables).reduce((acc, color) => {
     acc += `.${color}{background:var(--${color})!important;}`
     acc += `.${color}--text{color:var(--${color})!important;}`
+    acc += `.${color}--border{border-color:var(--${color})!important;}`
 
     return acc
   }, '')
@@ -35,4 +36,11 @@ export const useInjectCss = (css = '') => {
       document.head.removeChild(styleElement)
     }
   }, [])
+}
+
+export const useInjectVariables = (variables: CssVariables) => {
+  const colorsVariables = makeRootVariables(variables)
+  const variablesClasses = makeClassesForCssVariables(variables)
+
+  useInjectCss(`${colorsVariables}${variablesClasses}`)
 }

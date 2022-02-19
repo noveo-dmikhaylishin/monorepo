@@ -2,7 +2,7 @@ import type { FC } from 'react'
 import type { Themes } from './themes'
 
 import React, { useCallback, useMemo, useState } from 'react'
-import { makeClassesForCssVariables, makeRootVariables, useInjectCss } from '../style/css'
+import { useInjectVariables } from '../style/css'
 import { ThemeContext } from './context'
 import { defaultThemes, ThemesTypes } from './themes'
 
@@ -10,24 +10,30 @@ type Props = {
   themes?: Themes
 }
 
-export const ThemeProvider: FC<Props> = ({ themes = defaultThemes, children }) => {
+const useThemeState = (themes: Themes) => {
   const [currentTheme, setCurrentTheme] = useState<keyof ThemesTypes>(ThemesTypes.light)
   const theme = themes[currentTheme]
-  const { colors } = theme
 
   const availableThemes = useMemo(() => Object.keys(themes), [themes])
   const changeTheme = useCallback(newTheme => setCurrentTheme(newTheme), [setCurrentTheme])
 
-  const colorsVariables = makeRootVariables(colors)
-  const variablesClasses = makeClassesForCssVariables(colors)
+  return {
+    theme,
+    currentTheme,
+    availableThemes,
+    changeTheme,
+  }
+}
 
-  useInjectCss(colorsVariables)
-  useInjectCss(variablesClasses)
+export const ThemeProvider: FC<Props> = ({ themes = defaultThemes, children }) => {
+  const { theme, currentTheme, changeTheme, availableThemes } = useThemeState(themes)
+
+  useInjectVariables(theme.colors)
 
   return (
     <ThemeContext.Provider
       value={{
-        currentTheme,
+        name: currentTheme,
         theme,
         changeTheme,
         availableThemes,
