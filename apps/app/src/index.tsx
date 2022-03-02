@@ -5,6 +5,7 @@ import { ThemeProvider } from '@dmikhaylishin/ui'
 import { App } from 'components/App'
 
 import reportWebVitals from './reportWebVitals'
+import './assets/styles/index.scss'
 
 ReactDOM.render(
   <React.StrictMode>

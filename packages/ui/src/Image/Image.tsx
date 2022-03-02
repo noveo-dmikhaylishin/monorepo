@@ -1,11 +1,12 @@
 import type { FC } from 'react'
 
 import React from 'react'
-import { Component } from '../Component'
+
+import { Box } from '../Box'
 
 type Props = {
   src: string
   [key: string]: unknown
 }
 
-export const Image: FC<Props> = ({ src, ...props }) => <Component is="img" src={src} {...props} />
+export const Image: FC<Props> = ({ src, ...props }) => <Box is="img" src={src} {...props} />

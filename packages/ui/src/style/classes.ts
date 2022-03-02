@@ -1,4 +1,7 @@
-type Classes = Classes[] | Record<string, unknown> | string[] | string | undefined
+export type ObjectClasses = Record<string, unknown>
+export type ArrayClasses = Classes[] | string[]
+
+export type Classes = ObjectClasses | ArrayClasses | string | undefined
 
 const classesToString = (classes: Classes = ''): string => {
   if (Array.isArray(classes)) {

@@ -2,7 +2,7 @@ import type { FC } from 'react'
 
 import React from 'react'
 import { classNames } from '../style/classes'
-import { Component } from '../Component'
+import { Box } from '../Box'
 import './Layout.scss'
 
 type Props = {
@@ -12,7 +12,7 @@ type Props = {
 }
 
 export const Layout: FC<Props> = ({ children, is, className, ...props }) => (
-  <Component is={is} className={classNames('layout', className, props)}>
+  <Box is={is} className={classNames('layout', className, props)}>
     {children}
-  </Component>
+  </Box>
 )

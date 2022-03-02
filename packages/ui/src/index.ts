@@ -1,6 +1,6 @@
 export { Avatar } from './Avatar'
 export { Layout } from './Layout'
-export { Image } from './Image'
+export { Icon } from './Icon'
 export { Paper } from './Paper'
 export { Section } from './Section'
 
