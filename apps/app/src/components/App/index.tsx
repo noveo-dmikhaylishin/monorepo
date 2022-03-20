@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Section, Layout, Avatar, Icon } from '@dmikhaylishin/ui'
+import { Section, Layout, Avatar, Icon, Menu } from '@dmikhaylishin/ui'
 
 export const App = () => (
   <Layout column>
@@ -15,6 +15,7 @@ export const App = () => (
     <Section>
       <Icon name="menu" size={48} color="primary" />
       <Layout>Timeline</Layout>
+      <Menu>Test</Menu>
     </Section>
   </Layout>
 )

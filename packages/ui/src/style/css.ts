@@ -11,9 +11,11 @@ export const makeCssVariables = (variables: CssVariables): string =>
 
 export const makeClassesForCssVariables = (variables: CssVariables): string =>
   Object.keys(variables).reduce((acc, color) => {
-    acc += `.${color}{background:var(--${color})!important;}`
-    acc += `.${color}--text{color:var(--${color})!important;}`
-    acc += `.${color}--border{border-color:var(--${color})!important;}`
+    acc += `
+      .${color}{background:var(--${color})!important;}
+      .${color}--text{color:var(--${color})!important;}
+      .${color}--border{border-color:var(--${color})!important;}
+    `
 
     return acc
   }, '')

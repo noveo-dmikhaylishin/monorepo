@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { ThemeProvider } from '@dmikhaylishin/ui'
+import { ThemeProvider, Application } from '@dmikhaylishin/ui'
 
 import { App } from 'components/App'
 
@@ -10,7 +10,9 @@ import './assets/styles/index.scss'
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider>
-      <App />
+      <Application>
+        <App />
+      </Application>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root'),

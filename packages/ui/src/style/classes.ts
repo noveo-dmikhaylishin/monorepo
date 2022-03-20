@@ -5,7 +5,7 @@ export type Classes = ObjectClasses | ArrayClasses | string | undefined
 
 const classesToString = (classes: Classes = ''): string => {
   if (Array.isArray(classes)) {
-    return classes.filter(Boolean).map(classesToString).join(' ')
+    return classes.map(classesToString).filter(Boolean).join(' ')
   }
 
   if (typeof classes === 'object') {

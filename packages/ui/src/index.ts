@@ -3,6 +3,8 @@ export { Layout } from './Layout'
 export { Icon } from './Icon'
 export { Paper } from './Paper'
 export { Section } from './Section'
+export { Application } from './Application'
+export { Menu } from './Menu'
 
 export * from './style/css'
 export * from './theme'
