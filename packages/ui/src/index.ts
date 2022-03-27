@@ -5,6 +5,8 @@ export { Paper } from './Paper'
 export { Section } from './Section'
 export { Application } from './Application'
 export { Menu } from './Menu'
+export { Field } from './Field'
+export { Combobox } from './Combobox'
 
 export * from './style/css'
 export * from './theme'

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Section, Layout, Avatar, Icon, Menu } from '@dmikhaylishin/ui'
+import { Section, Layout, Avatar, Icon, Combobox } from '@dmikhaylishin/ui'
 
 export const App = () => (
   <Layout column>
@@ -15,7 +15,16 @@ export const App = () => (
     <Section>
       <Icon name="menu" size={48} color="primary" />
       <Layout>Timeline</Layout>
-      <Menu>Test</Menu>
+      <Combobox
+        label="Combobox"
+        items={[
+          { text: 'Text 1', value: 'value 1' },
+          { text: 'Text 2', value: 'value 2' },
+          { text: 'Test', value: 'test' },
+          { text: 'Text 3', value: 'value 3' },
+          { text: 'Text 4', value: 'value 4' },
+        ]}
+      />
     </Section>
   </Layout>
 )

@@ -1,7 +1,7 @@
 import type { FC } from 'react'
 import type { Classes } from '../style/classes'
 
-import React, { forwardRef, memo } from 'react'
+import { forwardRef, memo, createElement } from 'react'
 import { classNames } from '../style/classes'
 
 type Props = {
@@ -19,6 +19,6 @@ export const Box: FC<Props> = memo(
       ...props,
     }
 
-    return React.createElement(is, propsWithClasses, children)
+    return createElement(is, propsWithClasses, children)
   }),
 )

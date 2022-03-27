@@ -1,19 +1,14 @@
 import { RefObject, useLayoutEffect } from 'react'
 
-type ClickOutsideOptions = {
-  ignoreList?: (HTMLElement | null)[]
-}
-
 export const useClickOutside = <Element extends HTMLElement = HTMLElement>(
   ref: RefObject<Element>,
   handler: () => void,
-  { ignoreList = [] }: ClickOutsideOptions = {},
 ) => {
   useLayoutEffect(() => {
     const mouseUpHandler = (event: MouseEvent) => {
       const target = event.target as Node
 
-      if (!ref.current || ignoreList.some(element => element && element.contains(target))) {
+      if (!ref.current) {
         return
       }
 
@@ -27,5 +22,5 @@ export const useClickOutside = <Element extends HTMLElement = HTMLElement>(
     return () => {
       document.removeEventListener('mouseup', mouseUpHandler, true)
     }
-  }, [ref, handler, ignoreList])
+  }, [ref, handler])
 }

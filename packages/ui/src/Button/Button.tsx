@@ -1,15 +1,16 @@
-import type { FC } from 'react'
+import type { PropsWithChildren } from 'react'
 
 import React, { forwardRef } from 'react'
 import { Box } from '../Box'
 import { classNames } from '../style/classes'
 import './Button.scss'
 
-type Props = FC & {
-  color?: string
-  rounded?: boolean
-  [key: string]: unknown
-}
+type Props = React.HTMLProps<HTMLButtonElement> &
+  PropsWithChildren<{
+    color?: string
+    rounded?: boolean
+    [key: string]: unknown
+  }>
 
 export const Button = forwardRef<HTMLButtonElement, Props>(
   ({ color = 'primary', rounded, ...props }, ref) => (

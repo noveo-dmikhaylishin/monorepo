@@ -5,8 +5,14 @@ export const useToggle = (initialValue = false) => {
 
   const toggle = useCallback(() => setValue(prevState => !prevState), [setValue])
 
+  const turnOn = useCallback(() => setValue(true), [setValue])
+
+  const turnOff = useCallback(() => setValue(false), [setValue])
+
   return {
     value,
     toggle,
+    turnOn,
+    turnOff,
   }
 }

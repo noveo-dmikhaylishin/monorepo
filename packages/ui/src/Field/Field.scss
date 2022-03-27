@@ -1,0 +1,57 @@
+$fieldTopPadding: 10px;
+
+$inputHeight: 40px;
+$inputPadding: 10px;
+
+$labelHeight: 20px;
+$labelFontSize: 16px;
+
+$labelFocusedHeight: 18px;
+$labelFocusedFontSize: 14px;
+
+.field {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  padding-top: calc(#{$labelFocusedHeight} / 2);
+
+  &__label {
+    position: absolute;
+    left: 10px;
+    top: calc(#{$inputHeight} / 2);
+
+    display: flex;
+    align-items: center;
+
+    height: $labelHeight;
+
+    padding: 0 4px;
+
+    font-size: $labelFontSize;
+
+    transition: 0.16s;
+
+    white-space: nowrap;
+
+    input:focus ~ &,
+    input:not([value=""]) ~ & {
+      top: calc(#{$labelHeight} - #{$labelFocusedHeight});
+      font-size: $labelFocusedFontSize;
+      height: $labelFocusedHeight;
+      background: white;
+    }
+  }
+
+  &__input {
+    border: solid 2px;
+    box-sizing: border-box;
+    padding: $inputPadding;
+    height: $inputHeight;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
